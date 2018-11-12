@@ -20,7 +20,8 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DateFormat dft = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime = dft.format(new Date());
-        req.setAttribute("currentTime", currentTime);
+        String userName = "lilimin";
+        req.setAttribute("currentTime", currentTime + userName);
         req.getRequestDispatcher("/jsp/hello.jsp").forward(req, resp);
     }
 }
